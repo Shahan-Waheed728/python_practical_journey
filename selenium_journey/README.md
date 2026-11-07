@@ -29,6 +29,46 @@ A hands-on Python learning journey focused on browser automation, web scraping, 
 
 https://www.selenium.dev/selenium/web/web-form.html
 
+## Day 2 — Dynamic Content and Explicit Waits
+
+**Date:** November 8, 2026
+
+### Topics Learned
+
+- Understanding static and dynamically loaded webpage content
+- Differences between `time.sleep()` and `WebDriverWait`
+- Waiting for elements using `presence_of_element_located()`
+- Waiting for visible elements using `visibility_of_element_located()`
+- Understanding `TimeoutException`
+- Handling failures using `try...except...finally`
+- Ensuring browser cleanup with `driver.quit()`
+
+### Practical Exercises
+
+**Exercise 1: Waiting for Dynamic Elements**
+- Opened Dynamic Loading Example 2.
+- Clicked the Start button.
+- Waited for the target element to appear in the DOM.
+- Extracted the displayed message.
+
+**Exercise 2: Waiting for Hidden Elements**
+- Opened Dynamic Loading Example 1.
+- Used `visibility_of_element_located()` to wait for initially hidden content.
+- Extracted the text after the element became visible.
+
+**Exercise 3: Timeout Exception Handling**
+- Configured a two-second explicit wait.
+- Handled `TimeoutException` using an exception handler.
+- Ensured browser cleanup using `finally`.
+
+### Key Learning
+
+An element's presence in the DOM does not guarantee its visibility. Reliable browser automation requires choosing appropriate wait conditions and handling failures predictably.
+
+### Next Milestone — Day 3
+
+Extracting multiple elements from dynamic websites, handling missing data, and building a small practical scraper.
+
 ### Technologies
 
 - Python
@@ -41,10 +81,6 @@ https://www.selenium.dev/selenium/web/web-form.html
 ```bash
 python -m pip install -r requirements.txt
 ```
-
-## Next Milestone
-
-Learn explicit waits, dynamic webpage loading, and reliable element interaction.
 
 ## Learning Philosophy
 
