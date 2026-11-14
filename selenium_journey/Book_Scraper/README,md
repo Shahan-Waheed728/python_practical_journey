@@ -1,0 +1,148 @@
+# Book Intelligence Collector — Selenium Web Scraping
+
+A Python web scraping project built using Selenium WebDriver to extract, validate, and analyze book information from the [Books to Scrape](https://books.toscrape.com/) practice website.
+
+This project is part of my **Python Practical Journey**, focusing on browser automation, web scraping, data validation, and reliable data extraction.
+
+## Features
+
+- Automates Google Chrome using Selenium WebDriver.
+- Extracts book information using CSS selectors.
+- Independently extracts the same information using XPath.
+- Collects book titles, prices, and availability.
+- Stores extracted records in Python lists of dictionaries.
+- Checks records for missing fields.
+- Compares CSS and XPath extraction results.
+- Identifies the most expensive book.
+- Detects duplicate book titles using Python sets.
+- Reports scraping success or failure based on validation conditions.
+- Uses explicit waits and handles Selenium timeout exceptions.
+- Closes the browser using a `finally` block.
+
+## Technologies
+
+- Python 3
+- Selenium WebDriver
+- Google Chrome
+- CSS Selectors
+- XPath
+
+## Project Structure
+
+```text
+Book_Scraper/
+├── scraping.py
+├── README.md
+└── requirements.txt
+```
+
+## Installation
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/Shahan-Waheed728/Python_Practical_Journey.git
+```
+
+**2. Navigate to the project directory**
+
+```bash
+cd Python_Practical_Journey/python_practical_journey/selenium_journey/Book_Scraper
+```
+
+**3. Create and activate a virtual environment (optional if already using one)**
+
+On Windows:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+**4. Install dependencies**
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+**5. Run the scraper**
+
+```bash
+python scraping.py
+```
+
+Google Chrome must be installed. Selenium Manager normally handles compatible ChromeDriver setup automatically.
+
+## Sample Output
+
+Example from a successful execution:
+
+```text
+=== Book Intelligence Report ===
+Website: All products | Books to Scrape - Sandbox
+
+Valid records:20
+Invalid records: 0
+Extracted elements: 20
+
+Valid records:20
+Invalid records: 0
+Extracted elements: 20
+
+Expensive book: Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991
+Price: 57.25
+Duplicate titles: 0
+CSS vs XPATH comparison: Match
+Scraping status: SUCCESS
+Browser closed successfully.
+```
+
+*Output depends on the website's current content.*
+
+## How It Works
+
+1. Selenium launches Chrome and opens Books to Scrape.
+2. CSS selectors locate book cards and extract information.
+3. XPath independently extracts the same information.
+4. The program checks for missing data and compares both results.
+5. Book prices are converted into numeric values to find the maximum.
+6. A Python set tracks previously encountered titles to detect duplicates.
+7. The program reports the results and closes the browser.
+
+## Validation Rules
+
+The scraper reports success when:
+
+- CSS and XPath extraction results match.
+- Both methods extract exactly 20 records.
+- No required fields are empty.
+- No duplicate titles are detected.
+
+## Current Scope and Limitations
+
+- Scrapes only the first page.
+- Does not yet support pagination.
+- Does not export data to CSV or a database.
+- Assumes prices are valid numeric values after removing the currency symbol.
+- Requires Chrome and a compatible ChromeDriver.
+
+## Future Improvements
+
+- Multi-page scraping with pagination.
+- CSV and JSON export.
+- Improved exception handling and validation.
+- Reusable scraping functions.
+- Automated tests.
+- Performance monitoring.
+
+## Learning Outcomes
+
+This project strengthened my understanding of Selenium browser automation, CSS selectors, XPath, structured data extraction, Python sets, data validation, and defensive programming.
+
+## Author
+
+Shahan Waheed
+
+GitHub: [Shahan-Waheed728](https://github.com/Shahan-Waheed728)
+
+Part of the **Python Practical Journey**.
