@@ -67,6 +67,7 @@ finally:
             print("CSV verification successful.")
         else:
             print("CSV verification failed.")
+        
     else:
         print("No valid records to export.")
     
